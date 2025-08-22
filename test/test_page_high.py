@@ -1,3 +1,5 @@
+import time
+
 import allure
 from selene import browser
 
@@ -15,6 +17,7 @@ def test_requirement_form():
     user = User()
     form = FormValidator()
     open_machin.open()
+    time.sleep(2)
     browser.driver.execute_script("$('#fixedban').remove()")
     browser.driver.execute_script("$('footer').remove()")
 
