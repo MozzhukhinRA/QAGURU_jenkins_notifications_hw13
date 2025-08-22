@@ -17,9 +17,7 @@ def test_requirement_form():
     user = User()
     form = FormValidator()
     open_machin.open()
-    time.sleep(10)
-    browser.driver.execute_script("$('#fixedban').remove()")
-    browser.driver.execute_script("$('footer').remove()")
+    open_machin.delete_ad()
 
 
     allure.dynamic.title(f"Регистрация студента {user.full_name}")
