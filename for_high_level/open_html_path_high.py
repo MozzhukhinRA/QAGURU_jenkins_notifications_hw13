@@ -6,7 +6,7 @@ from selene import be, browser, have
 class FormPage:
     def open(self):
         browser.open('https://demoqa.com/automation-practice-form')
-        time.sleep(4)
+        time.sleep(10)
         browser.driver.execute_script("$('#fixedban').remove()")
         browser.driver.execute_script("$('footer').remove()")
         return self
