@@ -18,7 +18,12 @@ def test_requirement_form():
     form = FormValidator()
     open_machin.open()
     open_machin.delete_ad()
-
+    browser.execute_script("""
+        var ads = document.querySelectorAll('img[src*=\"ad.plus\"], img[alt*=\"advertising\"]');
+        for (var i = 0; i < ads.length; i++) {
+            ads[i].style.display = 'none';
+        }
+    """)
 
     allure.dynamic.title(f"Регистрация студента {user.full_name}")
 
