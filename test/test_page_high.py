@@ -40,7 +40,7 @@ def test_requirement_form():
 
     with allure.step('Ввод даты'):
         # ввод даты
-        personal_data.students_registration_date_of_birth(user.year,user.moth,user.day)
+        personal_data.students_registration_date_of_birth(user.year, user.month, user.day)
 
     with allure.step('Заполнение subject'):
         # заполнение области subject

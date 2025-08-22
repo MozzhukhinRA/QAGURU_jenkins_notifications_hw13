@@ -9,7 +9,7 @@ class FormPage:
         return self
 
     def delete_ad(self):
-        time.sleep(10)
+        time.sleep(3)
         browser.driver.execute_script("$('#fixedban').remove()")
         browser.driver.execute_script("$('footer').remove()")
 
@@ -42,12 +42,12 @@ class BrowserPage:
         browser.element('#userNumber').should(be.visible).type(value)
 
 
-    def students_registration_date_of_birth(self, year, moth, day):
+    def students_registration_date_of_birth(self, year, month_value, day):
         browser.element('#dateOfBirthInput').should(be.visible).click()
-        browser.element('.react-datepicker__month-select').type(moth)
+        browser.element('.react-datepicker__month-select').type(month_value)
         browser.element('.react-datepicker__year-select').type(year)
         browser.element(f'.react-datepicker__day--0{day}').click()
-        return f'{day} {moth},{year}'
+        return f'{day} {month_value},{year}'
 
     def students_registration_subject(self, value):
         browser.element('#subjectsInput').type(value).press_enter()
