@@ -1,4 +1,5 @@
 import allure
+from selene import browser
 
 from for_high_level.validate_form import FormValidator
 from for_high_level.open_html_path_high import PhotoPage, BrowserPage, RegistrationPage, FormPage
@@ -14,6 +15,8 @@ def test_requirement_form():
     user = User()
     form = FormValidator()
     open_machin.open()
+    browser.driver.execute_script("$('#fixedban').remove()")
+    browser.driver.execute_script("$('footer').remove()")
 
     allure.dynamic.title(f"Регистрация студента {user.full_name}")
 

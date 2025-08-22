@@ -38,8 +38,6 @@ def browser_options():
     browser.config.window_height = 1080
     browser.config.base_url='https://demoqa.com'
 
-
-
     yield browser
 
     attach_utils.add_html(browser)
